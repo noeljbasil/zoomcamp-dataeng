@@ -18,17 +18,13 @@
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": { 
-				"python.defaultInterpreterPath": "/usr/local/bin/python",
-				"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
-				"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-				"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf"
-			},
+			// "settings": {}
 			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-python.python",
-				"GitHub.copilot-chat"
+				"GitHub.copilot-chat",
+				"ms-vscode.makefile-tools"
 			]
 		}
 	},
