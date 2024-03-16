@@ -33,7 +33,9 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "virtualenv ~/.venv && echo 'source ~/.venv/bin/activate' >> ~/.bashrc && make install",
+	// "postCreateCommand": "virtualenv ~/.venv && echo 'source ~/.venv/bin/activate' >> ~/.bashrc && make install",
+	"postCreateCommand": "virtualenv ~/.venv && echo 'source ~/.venv/bin/activate' >> ~/.bashrc && source ~/.venv/bin/activate && make install",
+	// "postCreateCommand": "[ -d ~/.venv ] || virtualenv ~/.venv && echo 'source ~/.venv/bin/activate' >> ~/.bashrc && source ~/.venv/bin/activate && make install",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
