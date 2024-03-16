@@ -13,4 +13,4 @@ lint:
 
 refactor: format lint
 
-all: install format test
+all: install refactor test
