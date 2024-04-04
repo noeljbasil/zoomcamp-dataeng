@@ -6,3 +6,4 @@ pytest
 docker
 jupyter
 pgcli
+SQLAlchemy
