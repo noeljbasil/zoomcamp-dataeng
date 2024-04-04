@@ -6,11 +6,11 @@ test:
 	python -m pytest -vv test_*.py
 
 format:	
-	black *.py
+	isort *.py && black *.py
 
 lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py 
 
 refactor: format lint
 
-all: install lint test
+all: install refactor test
