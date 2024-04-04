@@ -4,3 +4,4 @@ click
 pytest
 docker
 jupyter
+pgcli
