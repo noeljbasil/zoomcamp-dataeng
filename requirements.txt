@@ -7,3 +7,4 @@ docker
 jupyter
 pgcli
 SQLAlchemy
+pandas
