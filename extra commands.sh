@@ -58,3 +58,6 @@ docker run -it \
         --db=ny_taxi \
         --table-name=ny_taxi_trips \
         --url=${URL}
+
+// running docker compose
+docker-compose up
