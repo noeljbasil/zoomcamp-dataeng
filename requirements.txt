@@ -8,3 +8,4 @@ jupyter
 pgcli
 SQLAlchemy
 pandas
+psycopg2
