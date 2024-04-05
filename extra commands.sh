@@ -10,7 +10,7 @@ pgcli -h localhost -p 5432 -u root -d ny_taxi
 // create docker network
 docker network create pg-network
 
-// Create a new database
+// Create a new database in a container in a network
 docker run -it \
     -e POSTGRES_USER="root" \
     -e POSTGRES_PASSWORD="root" \
@@ -21,7 +21,7 @@ docker run -it \
     --name pg-database \
     postgres:13
 
-// create pg admin server
+// create pg admin server in a container in a network
 docker run -it \
     -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
     -e PGADMIN_DEFAULT_PASSWORD="root" \
@@ -44,3 +44,17 @@ python ingest_data.py \
     --db=ny_taxi \
     --table-name=ny_taxi_trips \
     --url=${URL}
+
+// dockerize data ingestion
+docker build -t taxi_ingest:v001 .
+
+docker run -it \
+    --network=pg-network \
+    taxi_ingest:v001 \
+        --user=root \
+        --password=root \
+        --host=pg-database \
+        --port=5432 \
+        --db=ny_taxi \
+        --table-name=ny_taxi_trips \
+        --url=${URL}
