@@ -1,0 +1,11 @@
+black
+isort
+pylint
+click
+pytest
+docker
+jupyter
+pgcli
+SQLAlchemy
+pandas
+psycopg2
